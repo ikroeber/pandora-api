@@ -27,5 +27,8 @@ model company {
 }
 
 model project {
-  id String @id @default(uuid())
+  id           String @id @default(uuid())
+  name         String
+  abbreviation String @db.VarChar(3)
+  owner_id     Int
 }
