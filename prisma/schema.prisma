@@ -11,24 +11,21 @@ generator client {
 }
 
 model user {
-  id           Int       @id @default(autoincrement())
-  email        String    @unique
+  id           String   @id @default(uuid())
+  email        String   @unique
   pwd_hash     String
   first_name   String?
   last_name    String?
-  first_access Boolean   @default(true)
-  company      company[] @relation("user_company")
-}
-
-model company {
-  id   Int    @id @default(autoincrement())
-  name String
-  user user[] @relation("user_company")
+  first_access Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
 
 model project {
-  id           String @id @default(uuid())
+  id           String   @id @default(uuid())
   name         String
-  abbreviation String @db.VarChar(3)
-  owner_id     Int
+  abbreviation String   @db.VarChar(3)
+  owner_id     String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
