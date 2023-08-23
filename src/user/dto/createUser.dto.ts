@@ -1,12 +1,12 @@
 import { IsEmail, IsStrongPassword, IsNotEmpty } from 'class-validator'
 
 class CreateUserDTO {
-  @IsNotEmpty()
   @IsEmail()
+  @IsNotEmpty()
   email: string
 
-  @IsNotEmpty()
   @IsStrongPassword({ minLength: 8 })
+  @IsNotEmpty()
   password: string
 }
 
