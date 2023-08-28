@@ -9,7 +9,7 @@ const CONFIGURATION_DEFAULTS = {
 
 @Injectable()
 export class ConfigurationService {
-  getConfigurationByName(configName: CONFIGURATION_NAME) {
+  getConfigurationByName(configName: CONFIGURATION_NAME): string {
     return process.env[configName] || CONFIGURATION_DEFAULTS[configName]
   }
 }
