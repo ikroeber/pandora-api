@@ -23,7 +23,7 @@ describe('ConfigurationService', () => {
 
   describe('getConfigurationByName', () => {
     it.each([
-      [CONFIGURATION_NAME.DATABASE_HOST, '0.0.0.0'],
+      [CONFIGURATION_NAME.DATABASE_HOST, 'localhost'],
       [CONFIGURATION_NAME.DATABASE_PORT, '36542'],
       [CONFIGURATION_NAME.DATABASE_NAME, 'pandora-db'],
     ])("should return default value: '%s' -> '%s'", (input, expected) => {
@@ -32,13 +32,13 @@ describe('ConfigurationService', () => {
     })
 
     it('should return overriden value when environment variable is set', () => {
-      process.env.DATABASE_HOST = 'localhost'
+      process.env.DATABASE_HOST = '0.0.0.0'
 
       const hostName: string = service.getConfigurationByName(
         CONFIGURATION_NAME.DATABASE_HOST,
       )
 
-      expect(hostName).toBe('localhost')
+      expect(hostName).toBe('0.0.0.0')
     })
   })
 })
