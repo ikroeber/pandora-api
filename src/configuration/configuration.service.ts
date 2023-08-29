@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common'
 import { CONFIGURATION_NAME } from './types/configuration'
 
 const CONFIGURATION_DEFAULTS = {
-  DATABASE_HOST: '0.0.0.0',
+  DATABASE_HOST: 'localhost',
   DATABASE_PORT: '36542',
   DATABASE_NAME: 'pandora-db',
 }
