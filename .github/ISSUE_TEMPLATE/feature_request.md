@@ -2,7 +2,7 @@
 name: Feature request
 about: Suggest a new feature for Pandora!
 title: ''
-labels: 'Type: Feature'
+labels: 'Type: Feature Request'
 assignees: ikroeber
 
 ---
